@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ytomiyos <ytomiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:52:36 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/09 13:23:40 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:13:36 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	Phonebook::add()
 {
 	static int i = 0;
 	Contact contact;
-	std::string str;
 
 	contact.setFirstName(inputFirstName());
 	contact.setLastName(inputLastName());
@@ -82,22 +81,38 @@ int	Phonebook::search()
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 
-	std::cout << "Enter the index of the contact you want to see: ";
+	std::cout << std::endl << "Enter the index of the contact you want to see. Enter 0 to return." << std::endl;
 	while (1)
 	{
 		int n;
+		
 		std::cin >> n;
-		if (this->contacts[n - 1].getFirstName() != "")
+		if (std::cin.eof())
+			std::exit(1);
+		else if (std::cin.fail())
 		{
-			std::cout << "First name: " << this->contacts[n - 1].getFirstName() << std::endl;
-			std::cout << "Last name: " << this->contacts[n - 1].getLastName() << std::endl;
-			std::cout << "Nickname: " << this->contacts[n - 1].getNickname() << std::endl;
-			std::cout << "Phone number: " << this->contacts[n - 1].getPhonenumber() << std::endl;
-			std::cout << "Darkest secret: " << this->contacts[n - 1].getDarkestSecret() << std::endl;
+			std::cout << "Error: Please enter a number" << std::endl;
+			std::cin.clear();
+			std::cin.ignore(100, '\n');
+		}
+		else if (n > 0 && n <= 8 && this->contacts[n - 1].getFirstName() != "")
+		{
+			std::cout << std::endl << "***" << std::endl
+				<< "First name: " << this->contacts[n - 1].getFirstName() << std::endl
+				<< "Last name: " << this->contacts[n - 1].getLastName() << std::endl
+				<< "Nickname: " << this->contacts[n - 1].getNickname() << std::endl
+				<< "Phone number: " << this->contacts[n - 1].getPhonenumber() << std::endl
+				<< "Darkest secret: " << this->contacts[n - 1].getDarkestSecret() << std::endl
+				<< "***" << std::endl;
 			break;
 		}
+		else if (n == 0)
+			break;
 		else
-			std::cout << "Error: contact not found" << std::endl;
+		{
+			std::cout << "Error: Index number not found" << std::endl;
+		}
+		
 	}
 	return (0);
 }

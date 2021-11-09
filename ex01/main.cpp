@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ytomiyos <ytomiyos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:15:20 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/09 12:52:59 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:10:42 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ int main(void)
 
 	while (1)
 	{
-		std::cout << "[ADD] or [SEARCH] or [EXIT]" << std::endl;
+		std::cout << std::endl << "Please enter [ADD] or [SEARCH] or [EXIT]" << std::endl;
 		std::string str;
 		std::cin >> str;
-		if (str == "EXIT")
+		if (std::cin.eof())
+			std::exit(1);
+		else if (str == "EXIT")
 			return (0);
 		else if (str == "ADD")
 			phonebook.add();
