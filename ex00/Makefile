@@ -6,23 +6,24 @@
 #    By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 09:10:28 by ytomiyos          #+#    #+#              #
-#    Updated: 2021/11/08 10:46:43 by ytomiyos         ###   ########.fr        #
+#    Updated: 2021/11/08 21:02:04 by ytomiyos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX		:= clang++
-CXXFLAGS:= -Wall -Wextra -Werror
+CXX = clang++
 
-NAME	:= megaphone
+CXXFLAGS = -Wall -Wextra -Werror
 
-SRCS	=	megaphone.cpp
+NAME = megaphone
 
-OBJS	=	$(SRCS:.cpp=.o)
+SRCS = megaphone.cpp
 
-all		: $(NAME)
+OBJS = $(SRCS:.cpp=.o)
 
-$(NAME)	: $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+all : $(NAME)
+
+$(NAME) : $(OBJS)
+		$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
 		rm -f *.o
