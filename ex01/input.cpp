@@ -6,19 +6,17 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:03:23 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/08 15:57:02 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/09 13:36:12 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
+#include "standard.hpp"
 
 std::string inputFirstName()
 {
 	std::string firstName;
 	std::cout << "First name: ";
 	std::cin >> firstName;
-	if (firstName.length() > 10)
-		firstName = firstName.substr(0, 9) + ".";
 	return (firstName);
 }
 
@@ -27,8 +25,6 @@ std::string inputLastName()
 	std::string lastName;
 	std::cout << "Last name: ";
 	std::cin >> lastName;
-	if (lastName.length() > 10)
-		lastName = lastName.substr(0, 9) + ".";
 	return (lastName);
 }
 
@@ -37,8 +33,6 @@ std::string inputNickName()
 	std::string nickName;
 	std::cout << "Nickname: ";
 	std::cin >> nickName;
-	if (nickName.length() > 10)
-		nickName = nickName.substr(0, 9) + ".";
 	return (nickName);
 }
 

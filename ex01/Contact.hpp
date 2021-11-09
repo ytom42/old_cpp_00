@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact_class.hpp                                  :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:51:20 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/08 15:58:04 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/09 13:23:58 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
+# include "standard.hpp"
 
 class Contact
 {
@@ -31,6 +32,8 @@ public:
 	std::string getFirstName() { return (this->firstName); };
 	std::string getLastName() { return (this->lastName); };
 	std::string getNickname() { return (this->nickname); };
+	std::string getPhonenumber() { return (this->phonenumber); };
+	std::string getDarkestSecret() { return (this->darkestSecret); };
 };
 
 #endif

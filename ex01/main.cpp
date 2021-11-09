@@ -6,11 +6,12 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:15:20 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/08 15:51:53 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/09 12:52:59 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "standard.hpp"
+#include "Phonebook.hpp"
 
 int main(void)
 {
@@ -18,6 +19,7 @@ int main(void)
 
 	while (1)
 	{
+		std::cout << "[ADD] or [SEARCH] or [EXIT]" << std::endl;
 		std::string str;
 		std::cin >> str;
 		if (str == "EXIT")
